@@ -175,6 +175,7 @@ public class Ball implements Runnable, Movable
     {
         if (ball != this) // It cannot collide with itself
         {
+            // Checks if the rectangular bounds of each ball are overlapping, which indicates they are within range.
             if (ballCoords.getX() + radiux + ball.radiux > ball.ballCoords.getX()
                     && ballCoords.getX() < ball.ballCoords.getX() + radiux + ball.radiux
                     && ballCoords.getY() + radiux + ball.radiux > ball.ballCoords.getY()
