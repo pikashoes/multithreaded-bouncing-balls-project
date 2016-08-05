@@ -34,7 +34,7 @@ public class BouncingBalls
         jFrame.setVisible(true);
         jFrame.setResizable(false);
 
-        JSlider slider = new JSlider(JSlider.HORIZONTAL, 0, 100, 0);
+        JSlider slider = new JSlider(JSlider.HORIZONTAL, 0, 100, 50);
         slider.setPaintTicks(true);
         slider.setPaintLabels(true);
         JLabel valueSlider = new JLabel();

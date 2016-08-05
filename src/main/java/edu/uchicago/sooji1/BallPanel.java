@@ -42,6 +42,7 @@ class BallPanel extends JPanel
         balls = new ArrayList<>(100); //make it large to avoid capacity issues.
         threadExecutor = Executors.newCachedThreadPool();
 
+        // Button to add new balls
         button = new JButton("Add Balls");
         button.addActionListener(new ActionListener()
         {
@@ -57,7 +58,7 @@ class BallPanel extends JPanel
             } // end actionPerformed
         }); // end ActionListener
 
-        int initBalls = 4;
+        int initBalls = 4; // Start with 4 balls
         for (int i = 0; i < initBalls; i++)
         {
             Color initColor = new Color(colorGenerator.nextInt(255),colorGenerator.nextInt(255),colorGenerator.nextInt(255) );
@@ -80,11 +81,6 @@ class BallPanel extends JPanel
         {
             ball.draw(g2d);
         }
-
-//        for (Ball ball : balls)
-//        {
-//            ball.setBallVelocity(ball.getBallVelocityX() - deltaFriction, ball.getBallVelocityY() - deltaFriction);
-//        }
 
         for (int i = 0; i < balls.size(); i++)
         {
