@@ -135,29 +135,28 @@ public class Ball implements Runnable, Movable
         ballVelocity = new Point2D.Double(x, y);
     }
 
-    // Edit this
     public void move()
     {
         double newX = ballCoords.getX() + ballVelocity.getX();
         double newY = ballCoords.getY() + ballVelocity.getY();
 
-        // If the ball is too far to the right
+        // If the ball is too far to the right and moving to the right
         if (newX >= BallPanel.DIM.getWidth() - 2 * radiux && ballVelocity.getX() > 0)
         {
             setBallVelocity(-ballVelocity.getX(), ballVelocity.getY());
         }
-        // If the ball is too far to the left
-        else if (newX <= 2 * radiux && ballVelocity.getX() < 0)
+        // If the ball is too far to the left and moving to the left
+        else if (newX <= 0 && ballVelocity.getX() < 0)
         {
             setBallVelocity(-ballVelocity.getX(), ballVelocity.getY());
         }
-        // If the ball is too low
+        // If the ball is too low and moving downward
         else if (newY >= BallPanel.DIM.getHeight() - 2 * radiux && ballVelocity.getY() > 0)
         {
             setBallVelocity(ballVelocity.getX(), -ballVelocity.getY());
         }
-        // If the ball is too high
-        else if (newY <= 2 * radiux && ballVelocity.getY() < 0)
+        // If the ball is too high and moving upward
+        else if (newY <= 0 && ballVelocity.getY() < 0)
         {
             setBallVelocity(ballVelocity.getX(), -ballVelocity.getY());
         }
