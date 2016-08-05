@@ -214,6 +214,11 @@ public class Ball implements Runnable, Movable
 
     }
 
+    /**
+     * If I want to do something when it collides.
+     * @param ballA
+     * @param ballB
+     */
     public void drawCollision(Ball ballA, Ball ballB)
     {
         double aX = ballA.ballCoords.getX();
@@ -227,7 +232,7 @@ public class Ball implements Runnable, Movable
                 ((aX * bR) + (bX * aR)) / (aR + bR),
                 ((aY * bR) + (bY * aR)) / (aR + bR));
 
-        // Draw a circle at the point of collision
+        // Draw a circle at the point of collision?
     }
 
     private void getNewVelocities(Ball ballA, Ball ballB)
