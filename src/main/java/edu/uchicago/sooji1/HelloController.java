@@ -7,8 +7,6 @@ import org.apache.commons.lang.StringUtils;
 
 public class HelloController
 {
-
-
     @FXML private TextField firstNameField;
     @FXML private TextField lastNameField;
     @FXML private Label messageLabel;

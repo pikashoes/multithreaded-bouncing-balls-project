@@ -2,16 +2,13 @@ package edu.uchicago.sooji1;
 
 /**
  * Created by pikashoes on 8/3/16.
+ * The Ball Panel
  */
 
 import javax.swing.*;
-import javax.swing.event.ChangeEvent;
-import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.Random;
 import java.util.concurrent.ExecutorService;
@@ -36,7 +33,9 @@ class BallPanel extends JPanel
         return DIM;
     } // End Overloaded JPanel Dimension
 
-    // constructor
+    /**
+     * Constructor
+     */
     public BallPanel()
     {
         balls = new ArrayList<>(100); //make it large to avoid capacity issues.
@@ -82,6 +81,9 @@ class BallPanel extends JPanel
             ball.draw(g2d);
         }
 
+        // Collision detector
+        // This will skip redundant checks
+        // Inspiration from: http://gamedev.stackexchange.com/questions/20516/ball-collisions-sticking-together
         for (int i = 0; i < balls.size(); i++)
         {
             for (int j = i + 1; j < balls.size(); j++)
